@@ -1,0 +1,52 @@
+<table class="table table-bordered">
+	<thead class="thead-dark">
+		<tr
+			class="table">
+			{# title = tous les attribus de l'objet #}
+			{% for item in titles %}
+				<th>
+					{{ item }}
+				</th>
+			{% endfor %}
+		</tr>
+	</thead>
+	<tbody>
+		{# items = le nom de la class #}
+		{% for item in items %}
+			<tr class="table">
+				{% for attr in titles %}
+					<td>
+						{# Permet d'accéder à l'attribut d'un obj dynamiquement #}
+						{% if attr == "action" %}
+							<a class="btn btn-primary" href="{{ path(detail, {'id': attribute(item, "id")}) }}">
+								show
+							</a>
+							{% if is_granted('ROLE_VOLONTEER') %}
+								<a class="btn btn-success" href="{{ path(edit, {'id': attribute(item, "id")}) }}">
+									edit
+								</a>
+							{% endif %}
+						{% elseif attr == "user" %}
+							<a href="{{ path(user, {'id': attribute(item, "id")}) }}">
+								{# {{attribute(item, attr,"firsname")}} #}
+							</a>
+						{% elseif attr == "special" %}
+							{{ attribute(item, attr) ? 'Oui' : 'Non' }}
+						{% elseif attr == "status" %}
+							{{ attribute(item, attr) ? 'Oui' : 'Non' }}
+						{% elseif attr == "createdAt" %}
+							{{ attribute(item, attr) ? attribute(item, attr)|date('d-m-Y') : '' }}
+						{% elseif attr == "udatedAt" %}
+							{{ attribute(item, attr) ? attribute(item, attr)|date('d-m-Y') : '' }}
+						{% elseif attr == "availability" %}
+							{{ attribute(item, attr) ? 'Oui' : 'Non' }}
+						{% else %}
+							{{ attribute(item, attr) }}
+						{% endif %}
+
+					</td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes commandes{% endblock %}
+
+{% block body %}
+    <h1>Mes commandes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>N° commade</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commande in commandes %}
+            <tr>
+                <td>{{ commande.id }}</td>
+                <td>{{ commande.prix }}</td>
+                <td>
+                    <a href="{{ path('commande_show', {'id': commande.id}) }}">voir</a>
+                    <a href="{{ path('commande_edit', {'id': commande.id}) }}">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">pas de comande</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('home') }}">Passer commande</a>
+{% endblock %}

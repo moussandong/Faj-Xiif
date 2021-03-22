@@ -1,0 +1,154 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>0</x><y>2</y><w>110</w><h>260</h></coordinates><panel_attributes>&lt;&lt;ENTITY&gt;&gt;
+User
+-
+- ID int (auto incr) 
+- nom: string 
+- prenom: string. 
+- email: string.  
+- password: hash. 
+- phone: int 
+- numerosiret
+- address
+- Ville: string. 
+- ZIP: int. 
+- pays: string
+--
+&lt;&lt;Relations&gt;&gt;
+- commerce: null 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>620</x><y>42</y><w>190</w><h>310</h></coordinates><panel_attributes>&lt;&lt;ENTITY&gt;&gt;
+Commandes
+-
+- ID int (auto incr) -
+- date de la commande:datetime 
+- prix de la commande: floart 
+- statut  bool
+- livraison: bool
+- adresse
+- ville 
+- ZIP 
+- pays: string 
+--
+&lt;&lt;Relations&gt;&gt;
+- Utilisateur 
+- commerce
+- plat 
+- boisson
+- dessert 
+- supplement
+-  menu</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>13</y><w>540</w><h>70</h></coordinates><panel_attributes>lt=-
+m1=0.*
+m2=1.1
+OneToMany&gt;
+
+</panel_attributes><additional_attributes>10;10;520;40</additional_attributes></element><element><id>UMLClass</id><coordinates><x>500</x><y>682</y><w>100</w><h>160</h></coordinates><panel_attributes>&lt;&lt;ENTITY&gt;&gt;
+Plat 
+-
+- ID int (auto incr) -
+- prix du plat : floart 
+- picture: string
+- disponible 
+--
+&lt;&lt;Relations&gt;&gt;
+- restaurant
+- specialite</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>492</y><w>120</w><h>150</h></coordinates><panel_attributes>&lt;&lt;ENTITY&gt;&gt;
+specialité
+-
+- ID int (auto incr) -
+- nom:string 
+- description:  string 
+&lt;&lt;Relations&gt;&gt;
+- Plat 
+- restaurant </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>652</y><w>230</w><h>140</h></coordinates><panel_attributes>lt=-
+m1=1.*
+m2=1.*
+
+</panel_attributes><additional_attributes>210;110;10;110;20;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>312</y><w>110</w><h>360</h></coordinates><panel_attributes>&lt;&lt;ENTITY&gt;&gt;
+Commerce
+-
+- ID int (auto incr) 
+- nom:string 
+- picture: string 
+- phone
+- disponibilité
+_ numero siret
+- picture
+- nombre salarié: int  
+- adress
+- ville: string 
+- ZIP int 
+- pays: string
+--
+&lt;&lt;Relations&gt;&gt;
+- User 
+- Plat 
+- specialite 
+- boisson 
+- dessert
+- supplement 
+- type d'entreprise</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>412</y><w>100</w><h>120</h></coordinates><panel_attributes>&lt;&lt;ENTITY&gt;&gt;
+Boisson
+-
+- ID int (auto incr) -
+- nom:string 
+- picture
+- prix
+&lt;&lt;Relations&gt;&gt;
+- commerce</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>282</y><w>100</w><h>120</h></coordinates><panel_attributes>&lt;&lt;ENTITY&gt;&gt;
+Supplément 
+-
+- ID int (auto incr) -
+- nom:string 
+- picture
+- prix
+&lt;&lt;Relations&gt;&gt;
+- restaurant </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>542</y><w>100</w><h>140</h></coordinates><panel_attributes>&lt;&lt;ENTITY&gt;&gt;
+Dessert 
+-
+- ID int (auto incr) -
+- nom:string 
+- picture
+- prix
+&lt;&lt;Relations&gt;&gt;
+- commerce</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>432</y><w>170</w><h>60</h></coordinates><panel_attributes>lt=-
+m1=1.1
+m2=1.....*
+
+
+</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>552</y><w>170</w><h>60</h></coordinates><panel_attributes>lt=-
+m1=1.1
+m2=1.....*
+
+
+</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>562</y><w>150</w><h>70</h></coordinates><panel_attributes>lt=-
+m1=1.*
+m2=1.....*
+
+
+</panel_attributes><additional_attributes>10;20;130;30</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>320</y><w>170</w><h>60</h></coordinates><panel_attributes>lt=-
+m1=1.1
+m2=1.....*
+
+
+</panel_attributes><additional_attributes>10;30;150;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>312</y><w>120</w><h>150</h></coordinates><panel_attributes>&lt;&lt;ENTITY&gt;&gt;
+Type d'entreprise
+-
+- ID int (auto incr) -
+- nom:string 
+&lt;&lt;Relations&gt;&gt;
+- commerce</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>412</y><w>160</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=1.1
+m2=1.*
+
+</panel_attributes><additional_attributes>10;20;140;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>432</y><w>190</w><h>190</h></coordinates><panel_attributes>&lt;&lt;ENTITY&gt;&gt;
+Menu
+-
+- ID int (auto incr) -
+- nom 
+- prix du menu: floart 
+- picture
+--
+&lt;&lt;Relations&gt;&gt;
+- commerce
+- plat 
+- boisson
+- dessert </panel_attributes><additional_attributes></additional_attributes></element></diagram>

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des commerces
+{% endblock %}
+
+{% block body %}
+	{% if is_granted('ROLE_PRO') %}
+
+		<div class="container">
+			<div class="row">
+				{%  for commerce in commerces  %}
+					<div class="col-3">
+						<div class="card">
+							<img src="{{ vich_uploader_asset(commerce, 'imageFile') }}" alt="{{ commerce.imageName }}" width="250"/>
+							<br><em class="text-muted text-primary text-ilatic">
+								{{commerce.nom}}</em>
+							<ul>
+								<br>Adresse:
+								{{commerce.adresse}}
+								|
+								{{commerce.ville}}
+								|
+								<br>Téléphone:
+								{{commerce.telephone}}
+								<br>disponibilite :
+								{{ commerce.disponibilite ? 'Yes' : 'No'}}
+								<br>
+								<a href="{{ path('commerce_show', {'id': commerce.id}) }}">Afficher</a>
+								<br>
+								<a href="{{ path('commerce_edit', {'id': commerce.id}) }}">Modifier</a>
+
+							</ul>
+						</div>
+					</div>
+				{% endfor %}
+				<div>
+					<a class="btn btm-primary" href="{{ path('commerce_new') }}" role="button">Ajouter un commerce</a>
+				</div>
+			{% else %}
+				<div>
+					<h1>Cette page est pour les professionnelles
+					</h1>
+				</div>
+
+			{% endif %}
+
+		{% endblock %}

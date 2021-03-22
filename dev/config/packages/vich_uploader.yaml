@@ -1,0 +1,34 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        plats:
+            uri_prefix: /images/plats
+            upload_destination: "%kernel.project_dir%/public/images/plats"
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        desserts:
+            uri_prefix: /images/desserts
+            upload_destination: "%kernel.project_dir%/public/images/desserts"
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        commerces:
+            uri_prefix: /images/commerces
+            upload_destination: "%kernel.project_dir%/public/images/commerces"
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        
+        menus:
+            uri_prefix: /images/menus
+            upload_destination: "%kernel.project_dir%/public/images/menus"
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        produits:
+            uri_prefix: /images/produits
+            upload_destination: "%kernel.project_dir%/public/images/produits"
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        supplements:
+            uri_prefix: /images/supplements
+            upload_destination: "%kernel.project_dir%/public/images/supplements"
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

@@ -1,0 +1,111 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="#">
+		Faj Xiif
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarColor02">
+
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="{{path('home')}}">
+					Accueil
+					<span class="sr-only">
+						(current)
+					</span>
+				</a>
+			</li>
+			<li class="nav-item active">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket2-fill" viewbox="0 0 16 16">
+					<path d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383L5.93 1.757zM4 10a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm4-1a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1z"/>
+				</svg>
+				<a class="nav-link" href="{{path('panier_index')}}">
+					Panier
+					<span class="sr-only">
+						(current)
+					</span>
+				</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="{{path('user_partenaire')}}">
+					Devenir partenaire
+					<span class="sr-only">
+						(current)
+					</span>
+				</a>
+			</li>
+
+
+			{% if not app.user %}
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ path('app_login')}}">
+						Se connecter
+						<span class="sr-only">
+							(current)
+						</span>
+					</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{{path('user_new')}}">
+						Créer mon compte
+						<span class="sr-only">
+							(current)
+						</span>
+					</a>
+				</li>
+			{% else %}
+
+				<li class="nav-item">
+					<a class="nav-link" href="{{path('user_show', {'id':app.user.id})}}">
+						Mon Compte
+					</a>
+				</li>
+
+				<li class="nav-item ml-auto">
+					<a class="nav-link" href="{{path('commande_index', {'id':app.user.id})}}">
+						Mes commandes
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="{{path('app_logout')}}">
+						Se déconnecter
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+		<ul class="navbar-nav mr-left">
+
+			{%  if is_granted('ROLE_PRO')  %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('commerce_index') }}">
+						Gérer mes commerces
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('produit_index') }}">
+						Gérer mes produits
+					</a>
+				</li>
+				<li class="nav-item ml-auto">
+					<a class="nav-link" href="{{path('user_show', {'id':app.user.id})}}">
+						Tableau de bord
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+	</div>
+</nav>
+{% for label, messages in app.flashes %}
+	<div class="container">
+		<div class="alert-{{ label }}">
+			{% for message in messages %}
+				<p>
+					{{ message|raw }}
+				</p>
+			{% endfor %}
+		</div>
+	</div>
+{% endfor %}

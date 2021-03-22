@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New User
+{% endblock %}
+
+{% block body %}
+	<h1>créer mon compte</h1>
+
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+	{% endfor %}
+
+	{{ include('user/_form.html.twig') }}
+
+	<a href="{{ path('user_index') }}">back to list</a>
+{% endblock %}

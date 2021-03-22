@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Faj xiif
+{% endblock %}
+
+{% block body %}
+
+	<style>
+
+		.responsive {
+			width: 100%;
+			height: auto;
+		}
+	</style>
+
+
+	
+
+	<div class="container">
+		<div class="row">
+			{%  for produit in produits  %}
+				<div class="col-4 mt-4">
+					<div class="border border-dark rounded p-2 clearfix">
+						<h5>
+							{{produit.nom}}
+
+						</h5>
+
+						<img class="img-fluid rounded" src="{{ vich_uploader_asset(produit, 'imageFile') }}" alt="{{ produit.imageName }}" width="250"/>
+						<br>
+						<h5>
+							{{produit.prix }}
+							€
+						<a href="{{ path('panier_add', {'id': produit.id}) }} " class="btn btn-success
+																																							float-right">
+							<i class="fas fa-shopping-cart mr-1"></i>
+							Ajouter à la commande
+						</a>
+												</h5>
+
+					</div>
+				</div>
+			{% endfor %}
+
+		{% endblock %}
