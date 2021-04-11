@@ -11,15 +11,15 @@ class ComposerStaticInit9f8839ce00296fb4ee350867befae941
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
-        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
-        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
-        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '92c8763cd6170fce6fcfe7e26b4e8c10' => __DIR__ . '/..' . '/symfony/phpunit-bridge/bootstrap.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
+        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -155,6 +155,7 @@ class ComposerStaticInit9f8839ce00296fb4ee350867befae941
             'Doctrine\\Migrations\\' => 20,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Inflector\\' => 19,
+            'Doctrine\\Deprecations\\' => 22,
             'Doctrine\\DBAL\\' => 14,
             'Doctrine\\Common\\Lexer\\' => 22,
             'Doctrine\\Common\\DataFixtures\\' => 29,
@@ -177,8 +178,8 @@ class ComposerStaticInit9f8839ce00296fb4ee350867befae941
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -564,6 +565,10 @@ class ComposerStaticInit9f8839ce00296fb4ee350867befae941
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
         ),
+        'Doctrine\\Deprecations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+        ),
         'Doctrine\\DBAL\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL',
@@ -666,7 +671,6 @@ class ComposerStaticInit9f8839ce00296fb4ee350867befae941
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\CollectionRegionDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/CollectionRegionDoctrineCommand.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\ConvertMappingDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/ConvertMappingDoctrineCommand.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\CreateSchemaDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/CreateSchemaDoctrineCommand.php',
-        'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\DelegateCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/DelegateCommand.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\DoctrineCommandHelper' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/DoctrineCommandHelper.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\DropSchemaDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/DropSchemaDoctrineCommand.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\EnsureProductionSettingsDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/EnsureProductionSettingsDoctrineCommand.php',
@@ -728,10 +732,13 @@ class ComposerStaticInit9f8839ce00296fb4ee350867befae941
         'Doctrine\\Bundle\\FixturesBundle\\Tests\\Fixtures\\FooBundle\\FooBundle' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/Tests/Fixtures/FooBundle/FooBundle.php',
         'Doctrine\\Bundle\\FixturesBundle\\Tests\\IntegrationTest' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/Tests/IntegrationTest.php',
         'Doctrine\\Bundle\\FixturesBundle\\Tests\\IntegrationTestKernel' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/Tests/IntegrationTestKernel.php',
+        'Doctrine\\Bundle\\MigrationsBundle\\Collector\\MigrationsCollector' => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle/Collector/MigrationsCollector.php',
+        'Doctrine\\Bundle\\MigrationsBundle\\Collector\\MigrationsFlattener' => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle/Collector/MigrationsFlattener.php',
         'Doctrine\\Bundle\\MigrationsBundle\\DependencyInjection\\CompilerPass\\ConfigureDependencyFactoryPass' => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle/DependencyInjection/CompilerPass/ConfigureDependencyFactoryPass.php',
         'Doctrine\\Bundle\\MigrationsBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle/DependencyInjection/Configuration.php',
         'Doctrine\\Bundle\\MigrationsBundle\\DependencyInjection\\DoctrineMigrationsExtension' => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle/DependencyInjection/DoctrineMigrationsExtension.php',
         'Doctrine\\Bundle\\MigrationsBundle\\DoctrineMigrationsBundle' => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle/DoctrineMigrationsBundle.php',
+        'Doctrine\\Bundle\\MigrationsBundle\\MigrationsFactory\\ContainerAwareMigrationFactory' => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle/MigrationsFactory/ContainerAwareMigrationFactory.php',
         'Doctrine\\Common\\Annotations\\Annotation' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation.php',
         'Doctrine\\Common\\Annotations\\AnnotationException' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php',
         'Doctrine\\Common\\Annotations\\AnnotationReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationReader.php',
@@ -986,6 +993,7 @@ class ComposerStaticInit9f8839ce00296fb4ee350867befae941
         'Doctrine\\DBAL\\Exception\\TableNotFoundException' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/TableNotFoundException.php',
         'Doctrine\\DBAL\\Exception\\UniqueConstraintViolationException' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/UniqueConstraintViolationException.php',
         'Doctrine\\DBAL\\FetchMode' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/FetchMode.php',
+        'Doctrine\\DBAL\\ForwardCompatibility\\Result' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/ForwardCompatibility/Result.php',
         'Doctrine\\DBAL\\Id\\TableGenerator' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Id/TableGenerator.php',
         'Doctrine\\DBAL\\Id\\TableGeneratorSchemaVisitor' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Id/TableGeneratorSchemaVisitor.php',
         'Doctrine\\DBAL\\LockMode' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/LockMode.php',
@@ -1050,6 +1058,7 @@ class ComposerStaticInit9f8839ce00296fb4ee350867befae941
         'Doctrine\\DBAL\\Query\\Expression\\ExpressionBuilder' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Query/Expression/ExpressionBuilder.php',
         'Doctrine\\DBAL\\Query\\QueryBuilder' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Query/QueryBuilder.php',
         'Doctrine\\DBAL\\Query\\QueryException' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Query/QueryException.php',
+        'Doctrine\\DBAL\\Result' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Result.php',
         'Doctrine\\DBAL\\SQLParserUtils' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/SQLParserUtils.php',
         'Doctrine\\DBAL\\SQLParserUtilsException' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/SQLParserUtilsException.php',
         'Doctrine\\DBAL\\Schema\\AbstractAsset' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Schema/AbstractAsset.php',
@@ -1144,6 +1153,8 @@ class ComposerStaticInit9f8839ce00296fb4ee350867befae941
         'Doctrine\\DBAL\\Types\\VarDateTimeType' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Types/VarDateTimeType.php',
         'Doctrine\\DBAL\\Version' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Version.php',
         'Doctrine\\DBAL\\VersionAwarePlatformDriver' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/VersionAwarePlatformDriver.php',
+        'Doctrine\\Deprecations\\Deprecation' => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations/Deprecation.php',
+        'Doctrine\\Deprecations\\PHPUnit\\VerifyDeprecations' => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations/PHPUnit/VerifyDeprecations.php',
         'Doctrine\\Inflector\\CachedWordInflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/CachedWordInflector.php',
         'Doctrine\\Inflector\\GenericLanguageInflectorFactory' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/GenericLanguageInflectorFactory.php',
         'Doctrine\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Inflector.php',
@@ -3317,6 +3328,7 @@ class ComposerStaticInit9f8839ce00296fb4ee350867befae941
         'Symfony\\Bundle\\MakerBundle\\DependencyBuilder' => __DIR__ . '/..' . '/symfony/maker-bundle/src/DependencyBuilder.php',
         'Symfony\\Bundle\\MakerBundle\\DependencyInjection\\CompilerPass\\MakeCommandRegistrationPass' => __DIR__ . '/..' . '/symfony/maker-bundle/src/DependencyInjection/CompilerPass/MakeCommandRegistrationPass.php',
         'Symfony\\Bundle\\MakerBundle\\DependencyInjection\\CompilerPass\\RemoveMissingParametersPass' => __DIR__ . '/..' . '/symfony/maker-bundle/src/DependencyInjection/CompilerPass/RemoveMissingParametersPass.php',
+        'Symfony\\Bundle\\MakerBundle\\DependencyInjection\\CompilerPass\\SetDoctrineAnnotatedPrefixesPass' => __DIR__ . '/..' . '/symfony/maker-bundle/src/DependencyInjection/CompilerPass/SetDoctrineAnnotatedPrefixesPass.php',
         'Symfony\\Bundle\\MakerBundle\\DependencyInjection\\CompilerPass\\SetDoctrineManagerRegistryClassPass' => __DIR__ . '/..' . '/symfony/maker-bundle/src/DependencyInjection/CompilerPass/SetDoctrineManagerRegistryClassPass.php',
         'Symfony\\Bundle\\MakerBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/symfony/maker-bundle/src/DependencyInjection/Configuration.php',
         'Symfony\\Bundle\\MakerBundle\\DependencyInjection\\MakerExtension' => __DIR__ . '/..' . '/symfony/maker-bundle/src/DependencyInjection/MakerExtension.php',
