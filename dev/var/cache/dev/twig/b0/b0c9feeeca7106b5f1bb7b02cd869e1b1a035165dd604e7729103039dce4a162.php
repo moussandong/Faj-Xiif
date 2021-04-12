@@ -89,7 +89,7 @@ class __TwigTemplate_a279bd57b97be1cb37ebed2121a13162264215adb626301d2561ae6d530
         // line 8
         echo "
 
-<div class=\"container\">
+\t<div class=\"container\">
 \t\t<div id=\"carouselExampleControls\" class=\"carousel slide\" data-ride=\"carousel\">
 \t\t\t<ol class=\"carousel-indicators\">
 \t\t\t\t";
@@ -164,8 +164,7 @@ class __TwigTemplate_a279bd57b97be1cb37ebed2121a13162264215adb626301d2561ae6d530
             echo twig_escape_filter($this->env, $this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset($context["image"], "imageFile"), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "imageName", [], "any", false, false, false, 21), "html", null, true);
-            echo "\" height=\"400px\"
-                     width=\"300px\" class=\"d-block w-100\"/>
+            echo "\" height=\"400px\" width=\"300px\" class=\"d-block w-100\"/>
 \t\t\t\t\t\t<div class=\"carousel-caption d-none d-md-block\"></div>
 \t\t\t\t\t</div>
 \t\t\t\t";
@@ -181,7 +180,7 @@ class __TwigTemplate_a279bd57b97be1cb37ebed2121a13162264215adb626301d2561ae6d530
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 25
         echo "\t\t\t</div>
 
 \t\t\t<a class=\"carousel-control-prev\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"prev\">
@@ -198,76 +197,109 @@ class __TwigTemplate_a279bd57b97be1cb37ebed2121a13162264215adb626301d2561ae6d530
 \t\t\t</a>
 \t\t</div>
 
-\t</div>
 
-
-</button></div></div></body></html><div class=\"example-wrapper\">";
-        // line 45
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 45, $this->source); })()), "user", [], "any", false, false, false, 45)) {
-            echo "<h1>Bonjour";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 45, $this->source); })()), "user", [], "any", false, false, false, 45), "prenom", [], "any", false, false, false, 45), "html", null, true);
-            echo "!</h1><p>";
+\t\t";
+        // line 42
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 42, $this->source); })()), "user", [], "any", false, false, false, 42)) {
+            // line 43
+            echo "\t\t\t<h1>Bonjour";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43), "prenom", [], "any", false, false, false, 43), "html", null, true);
+            echo "!</h1>
+\t\t\t";
+            // line 44
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 45, $this->source); })()), "user", [], "any", false, false, false, 45), "roles", [], "any", false, false, false, 45));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "user", [], "any", false, false, false, 44), "roles", [], "any", false, false, false, 44));
             foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
-                // line 46
+                // line 45
+                echo "\t\t\t\t";
                 if ((0 === twig_compare($context["role"], "ROLE_USER"))) {
-                    // line 47
-                    echo "\tContent de vous revoir, nous vous avons préparé une panopli de produits rien que pour vous !
-";
-                } elseif ((0 === twig_compare(                // line 48
+                    // line 46
+                    echo "
+\t\t\t\t\t<p>Content de vous revoir, nous vous avons préparé une panopli de produits rien que pour vous !
+\t\t\t\t\t</p>
+
+\t\t\t\t";
+                } elseif ((0 === twig_compare(                // line 50
 $context["role"], "ROLE_ADMIN"))) {
-                    // line 49
-                    echo "\tBienvenue monsieur le technicien, nous vous faisons confiance pour la maintenance du site !
-";
-                } else {
                     // line 51
-                    echo "\tVos clients n'attendent que vous, à vous de jouer !
-";
+                    echo "\t\t\t\t\t<p>
+\t\t\t\t\t\tBienvenue monsieur le technicien, nous vous faisons confiance pour la maintenance du site !
+\t\t\t\t\t</p>
+
+\t\t\t\t";
+                } else {
+                    // line 56
+                    echo "\t\t\t\t\t<p>
+\t\t\t\t\t\tVos clients n'attendent que vous, à vous de jouer !
+\t\t\t\t\t</p>
+\t\t\t\t";
                 }
+                // line 60
+                echo "\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 52
-            echo "</p>";
+            // line 61
+            echo "\t\t";
         }
-        echo "</div><div class=\"container\"><div class=\"row\">";
+        // line 62
+        echo "
+
+\t\t<div class=\"row\">
+\t\t\t";
+        // line 65
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["commerces"]) || array_key_exists("commerces", $context) ? $context["commerces"] : (function () { throw new RuntimeError('Variable "commerces" does not exist.', 52, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["commerces"]) || array_key_exists("commerces", $context) ? $context["commerces"] : (function () { throw new RuntimeError('Variable "commerces" does not exist.', 65, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["commerce"]) {
-            echo "<div class=\"col-4 mt-4\">
-<div class=\"border border-dark rounded p-2 clearfix\" >
-\t<img class=\"img-fluid rounded\" src=\"";
-            // line 54
+            // line 66
+            echo "\t\t\t\t<div class=\"col-md-4\">
+\t\t\t\t\t<div class=\"card w-75\">
+\t\t\t\t\t\t<a href=\"";
+            // line 68
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("affiche_commerce", ["id" => twig_get_attribute($this->env, $this->source, $context["commerce"], "id", [], "any", false, false, false, 68)]), "html", null, true);
+            echo " \">
+\t\t\t\t\t\t\t<div class=\"card-header text-center\">
+\t\t\t\t\t\t\t\t<img class=\"img-fluid\" src=\"";
+            // line 70
             echo twig_escape_filter($this->env, $this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset($context["commerce"], "imageFile"), "html", null, true);
             echo "\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commerce"], "imageName", [], "any", false, false, false, 54), "html", null, true);
-            echo "\"
-                    width=\"100%\" height=\"100%\"/>
-\t<br>
-\t<h3>
-\t\t";
-            // line 58
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commerce"], "nom", [], "any", false, false, false, 58), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commerce"], "imageName", [], "any", false, false, false, 70), "html", null, true);
+            echo "\" width=\"100%\" height=\"100%\"/>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t\t<div class=\"card-body\">
+\t\t\t\t\t\t\t<h5 class=\"card-title\">
+\t\t\t\t\t\t\t\t<a href=\"";
+            // line 75
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("affiche_commerce", ["id" => twig_get_attribute($this->env, $this->source, $context["commerce"], "id", [], "any", false, false, false, 75)]), "html", null, true);
+            echo " \">
+\t\t\t\t\t\t\t\t\t";
+            // line 76
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commerce"], "nom", [], "any", false, false, false, 76), "html", null, true);
             echo "
-\t</h3>
-\t";
-            // line 60
-            echo ((twig_get_attribute($this->env, $this->source, $context["commerce"], "disponibilite", [], "any", false, false, false, 60)) ? ("Ouvert") : ("Fermé"));
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t</h5>
+\t\t\t\t\t\t\t<p class=\"card-text\">
+\t\t\t\t\t\t\t\t";
+            // line 80
+            echo ((twig_get_attribute($this->env, $this->source, $context["commerce"], "disponibilite", [], "any", false, false, false, 80)) ? ("Ouvert") : ("Fermé"));
             echo "
-\t<a href=\"";
-            // line 61
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("affiche_commerce", ["id" => twig_get_attribute($this->env, $this->source, $context["commerce"], "id", [], "any", false, false, false, 61)]), "html", null, true);
-            echo " \" class=\"btn btn-success
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tfloat-right\">
-\t\tVisiter
-\t</a>
-</div></div>";
+\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+
+\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['commerce'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 87
+        echo "\t\t</div>
+\t</div>
+
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -288,7 +320,7 @@ $context["role"], "ROLE_ADMIN"))) {
 
     public function getDebugInfo()
     {
-        return array (  261 => 61,  257 => 60,  252 => 58,  243 => 54,  233 => 52,  225 => 51,  221 => 49,  219 => 48,  216 => 47,  214 => 46,  206 => 45,  185 => 26,  164 => 21,  157 => 20,  140 => 19,  135 => 16,  114 => 14,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  299 => 87,  286 => 80,  279 => 76,  275 => 75,  265 => 70,  260 => 68,  256 => 66,  252 => 65,  247 => 62,  244 => 61,  238 => 60,  232 => 56,  225 => 51,  223 => 50,  217 => 46,  214 => 45,  210 => 44,  205 => 43,  203 => 42,  184 => 25,  164 => 21,  157 => 20,  140 => 19,  135 => 16,  114 => 14,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -302,7 +334,7 @@ $context["role"], "ROLE_ADMIN"))) {
 {% block body %}
 
 
-<div class=\"container\">
+\t<div class=\"container\">
 \t\t<div id=\"carouselExampleControls\" class=\"carousel slide\" data-ride=\"carousel\">
 \t\t\t<ol class=\"carousel-indicators\">
 \t\t\t\t{% for images in commerces %}
@@ -313,8 +345,7 @@ $context["role"], "ROLE_ADMIN"))) {
 \t\t\t<div class=\"carousel-inner\">
 \t\t\t\t{% for image in commerces %}
 \t\t\t\t\t<div class=\"carousel-item {% if loop.first %}active{% endif %}\">
-\t\t\t\t\t\t<img src=\"{{ vich_uploader_asset(image, 'imageFile') }}\" alt=\"{{ image.imageName }}\" height=\"400px\"
-                     width=\"300px\" class=\"d-block w-100\"/>
+\t\t\t\t\t\t<img src=\"{{ vich_uploader_asset(image, 'imageFile') }}\" alt=\"{{ image.imageName }}\" height=\"400px\" width=\"300px\" class=\"d-block w-100\"/>
 \t\t\t\t\t\t<div class=\"carousel-caption d-none d-md-block\"></div>
 \t\t\t\t\t</div>
 \t\t\t\t{% endfor %}
@@ -334,30 +365,56 @@ $context["role"], "ROLE_ADMIN"))) {
 \t\t\t</a>
 \t\t</div>
 
+
+\t\t{% if app.user %}
+\t\t\t<h1>Bonjour{{ app.user.prenom }}!</h1>
+\t\t\t{% for role in app. user.roles %}
+\t\t\t\t{% if role == \"ROLE_USER\" %}
+
+\t\t\t\t\t<p>Content de vous revoir, nous vous avons préparé une panopli de produits rien que pour vous !
+\t\t\t\t\t</p>
+
+\t\t\t\t{% elseif role == \"ROLE_ADMIN\" %}
+\t\t\t\t\t<p>
+\t\t\t\t\t\tBienvenue monsieur le technicien, nous vous faisons confiance pour la maintenance du site !
+\t\t\t\t\t</p>
+
+\t\t\t\t{% else %}
+\t\t\t\t\t<p>
+\t\t\t\t\t\tVos clients n'attendent que vous, à vous de jouer !
+\t\t\t\t\t</p>
+\t\t\t\t{% endif %}
+\t\t\t{% endfor %}
+\t\t{% endif %}
+
+
+\t\t<div class=\"row\">
+\t\t\t{%  for commerce in commerces  %}
+\t\t\t\t<div class=\"col-md-4\">
+\t\t\t\t\t<div class=\"card w-75\">
+\t\t\t\t\t\t<a href=\"{{ path('affiche_commerce', {'id': commerce.id}) }} \">
+\t\t\t\t\t\t\t<div class=\"card-header text-center\">
+\t\t\t\t\t\t\t\t<img class=\"img-fluid\" src=\"{{ vich_uploader_asset(commerce, 'imageFile') }}\" alt=\"{{ commerce.imageName }}\" width=\"100%\" height=\"100%\"/>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t\t<div class=\"card-body\">
+\t\t\t\t\t\t\t<h5 class=\"card-title\">
+\t\t\t\t\t\t\t\t<a href=\"{{ path('affiche_commerce', {'id': commerce.id}) }} \">
+\t\t\t\t\t\t\t\t\t{{commerce.nom}}
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t</h5>
+\t\t\t\t\t\t\t<p class=\"card-text\">
+\t\t\t\t\t\t\t\t{{ commerce.disponibilite ? 'Ouvert' : 'Fermé'}}
+\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+
+\t\t\t{% endfor %}
+\t\t</div>
 \t</div>
 
-
-</button></div></div></body></html><div class=\"example-wrapper\">{% if app.user %}<h1>Bonjour{{ app.user.prenom }}!</h1><p>{% for role in app. user.roles %}
-{% if role == \"ROLE_USER\" %}
-\tContent de vous revoir, nous vous avons préparé une panopli de produits rien que pour vous !
-{% elseif role == \"ROLE_ADMIN\" %}
-\tBienvenue monsieur le technicien, nous vous faisons confiance pour la maintenance du site !
-{% else %}
-\tVos clients n'attendent que vous, à vous de jouer !
-{% endif %}{% endfor %}</p>{% endif %}</div><div class=\"container\"><div class=\"row\">{%  for commerce in commerces  %}<div class=\"col-4 mt-4\">
-<div class=\"border border-dark rounded p-2 clearfix\" >
-\t<img class=\"img-fluid rounded\" src=\"{{ vich_uploader_asset(commerce, 'imageFile') }}\" alt=\"{{ commerce.imageName }}\"
-                    width=\"100%\" height=\"100%\"/>
-\t<br>
-\t<h3>
-\t\t{{commerce.nom}}
-\t</h3>
-\t{{ commerce.disponibilite ? 'Ouvert' : 'Fermé'}}
-\t<a href=\"{{ path('affiche_commerce', {'id': commerce.id}) }} \" class=\"btn btn-success
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tfloat-right\">
-\t\tVisiter
-\t</a>
-</div></div>{% endfor %}{% endblock %}
+{% endblock %}
 ", "home/index.html.twig", "/Users/ndongmoussa/Desktop/localhost/symfony/faj_xiif/dev/templates/home/index.html.twig");
     }
 }

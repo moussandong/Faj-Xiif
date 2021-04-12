@@ -70,7 +70,7 @@ class __TwigTemplate_1fb305c6f253cfc93baa8bb95b0619225ca93df7bcb4925e0414778040b
 
 <footer class=\"bg-dark text-center fixed text-white\"  \"jumbotron\">
   <!-- Grid container -->
-  <div class=\"container p-4\">
+  <div>
     <!-- Section: Social media -->
     <section class=\"mb-4\">
       <!-- Facebook -->
@@ -249,7 +249,7 @@ class __TwigTemplate_1fb305c6f253cfc93baa8bb95b0619225ca93df7bcb4925e0414778040b
 
 <footer class=\"bg-dark text-center fixed text-white\"  \"jumbotron\">
   <!-- Grid container -->
-  <div class=\"container p-4\">
+  <div>
     <!-- Section: Social media -->
     <section class=\"mb-4\">
       <!-- Facebook -->

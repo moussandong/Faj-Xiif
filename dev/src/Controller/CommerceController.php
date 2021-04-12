@@ -23,7 +23,7 @@ class CommerceController extends AbstractController
     public function index(CommerceRepository $commerceRepository): Response
     {
         return $this->render('commerce/index.html.twig', [
-            'commerces' => $commerceRepository->findAll(),
+            'commerces' => $commerceRepository->findOneByID($this->getUser()),
         ]);
     }
 

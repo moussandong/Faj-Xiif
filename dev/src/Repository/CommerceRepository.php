@@ -37,17 +37,17 @@ class CommerceRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Commerce
+    
+    public function findOneByID($value)
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+            ->andWhere('c.proprietaire = :val')
             ->setParameter('val', $value)
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getResult();
         ;
     }
-    */
+
 
 
     public function commerceId(): ?Commerce
