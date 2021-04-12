@@ -115,7 +115,7 @@ class __TwigTemplate_e237c7efbb29474b5e4b7c99256c398fe7b9fcb5d9831e9ed3fde96c884
                 <b>Current</b>
                 <span>";
             // line 22
-            echo twig_escape_filter($this->env, twig_last($this->env, twig_split_filter($this->env, twig_get_attribute($this->env, $this->source, twig_last($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 22, $this->source); })()), "data", [], "any", false, false, false, 22), "executed_migrations", [], "any", false, false, false, 22)), "version", [], "any", false, false, false, 22), "\\")), "html", null, true);
+            (((1 === twig_compare((isset($context["executed_migrations"]) || array_key_exists("executed_migrations", $context) ? $context["executed_migrations"] : (function () { throw new RuntimeError('Variable "executed_migrations" does not exist.', 22, $this->source); })()), 0))) ? (print (twig_escape_filter($this->env, twig_last($this->env, twig_split_filter($this->env, twig_get_attribute($this->env, $this->source, twig_last($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 22, $this->source); })()), "data", [], "any", false, false, false, 22), "executed_migrations", [], "any", false, false, false, 22)), "version", [], "any", false, false, false, 22), "\\")), "html", null, true))) : (print ("n/a")));
             echo "</span>
             </div>
             <div class=\"sf-toolbar-info-piece\">
@@ -538,7 +538,7 @@ class __TwigTemplate_e237c7efbb29474b5e4b7c99256c398fe7b9fcb5d9831e9ed3fde96c884
         {% set text %}
             <div class=\"sf-toolbar-info-piece\">
                 <b>Current</b>
-                <span>{{ collector.data.executed_migrations|last.version|split('\\\\')|last }}</span>
+                <span>{{ executed_migrations > 0 ? collector.data.executed_migrations|last.version|split('\\\\')|last : 'n/a' }}</span>
             </div>
             <div class=\"sf-toolbar-info-piece\">
                 <b>Executed</b>
